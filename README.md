@@ -1,4 +1,4 @@
-# LocalOptimisationFramework
+# Enhanced Local Optimization Framework for Light Field Disparity Estimation
 
 A Local Optimisation Framework for Light Field Disparity Estimation based on Simmulated Annealing. 
 

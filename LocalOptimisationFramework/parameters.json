@@ -1,0 +1,32 @@
+{
+
+	"lightFields": {
+		/*Path to the lightfields available at https://lightfield-analysis.uni-konstanz.de/ */
+		"paths": [
+			".\\hci_dataset\\training\\boxes",
+			".\\hci_dataset\\training\\cotton",
+			".\\hci_dataset\\training\\dino",
+			".\\hci_dataset\\training\\sideboard"
+		]
+	},
+	"LocalOptimisationFramework": {
+		"t0": [ 1 ],
+		/*alpha should be lower than 1*/
+		"alpha": [ 0.8 ],
+		"sigma": [ 0.02 ],
+		/*The number of iterations per temperature. Should be a positive integer*/
+		"nIter": [ 2 ],
+		/*The number of Temperatures. Should be a positive integer*/
+		"nTemps": [ 6 ]
+	},
+	"CostVolumeFramework": {
+		/*The number of depth labels in the cost volume*/
+		"nLabels": [ 30, 60, 90 ]
+	},
+	"Methods": {
+		/*The Correspondence Costs Tested. Variance, CAE and OAVCost are supported*/
+		"correspondenceCosts": [ "Variance", "CAE", "OAVCost" ],
+		/*The Frameworks used. CostVolume and Local Optimization are supported */
+		"Framework": [ "CostVolume", "LocalOptimisation" ]
+	}
+}

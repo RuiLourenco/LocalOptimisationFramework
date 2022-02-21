@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Collection.h" />
     <ClInclude Include="DepthMap.h" />
+    <ClInclude Include="json.h" />
     <ClInclude Include="LightField.h" />
     <ClInclude Include="TestDepthAlg.h" />
   </ItemGroup>
@@ -158,6 +159,9 @@
     <ClCompile Include="LightField.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="TestDepthAlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="parameters.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

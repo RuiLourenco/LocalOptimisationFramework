@@ -47,6 +47,34 @@ namespace depthMap {
 				return "Entropy";
 			}
 		}
+
+		static std::vector<DepthMethod> stringToDepthMethod(std::vector<cv::String> rawMethod) {
+			std::vector<DepthMethod> depthMethods{};
+			for (auto method : rawMethod) {
+				if (!method.compare("LocalOptimisation")) {
+					depthMethods.push_back(DepthMethod::iterative);
+				}
+				if (!method.compare("CostVolume")) {
+					depthMethods.push_back(DepthMethod::costVolume);
+				}
+			}
+			return depthMethods;
+		}
+		static std::vector<CorrespondenceCost> stringToCorrespondence(std::vector<cv::String> rawCorrespondence) {
+			std::vector<CorrespondenceCost> correspondenceCosts{};
+			for (auto cost : rawCorrespondence) {
+				if (!cost.compare("Variance")) {
+					correspondenceCosts.push_back(CorrespondenceCost::Variance);
+				}
+				if (!cost.compare("CAE")) {
+					correspondenceCosts.push_back(CorrespondenceCost::CAE);
+				}
+				if (!cost.compare("OAVCost")) {
+					correspondenceCosts.push_back(CorrespondenceCost::OAVCost);
+				}
+			}
+			return correspondenceCosts;
+		}
 		CorrespondenceCost correspondenceCost = CorrespondenceCost::CAE;
 		DepthMethod depthMethod = DepthMethod::iterative;
 	};
